@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class Organo {
     private Color color;
-    private ArrayList<String> caracteristicas;
+    private ArrayList<String> caracteristicas=new ArrayList();
     private int efectividad;
     private int potenciado;
     private int prueba;
@@ -22,9 +22,8 @@ public class Organo {
     public Organo() {
     }
 
-    public Organo(Color color, ArrayList<String> caracteristicas, int efectividad, int potenciado, int prueba) {
+    public Organo(Color color, int efectividad, int potenciado, int prueba) {
         this.color = color;
-        this.caracteristicas = caracteristicas;
         this.efectividad = efectividad;
         this.potenciado = potenciado;
         this.prueba = prueba;

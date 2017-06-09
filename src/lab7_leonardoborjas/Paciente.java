@@ -85,6 +85,13 @@ public class Paciente extends Persona{
 
     public void setOrganos(ArrayList<Organo> organos) {
         this.organos = organos;
+        
+        
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
     
     
