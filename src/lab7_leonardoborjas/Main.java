@@ -166,6 +166,7 @@ public class Main extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        p = new javax.swing.JButton();
 
         bg3.add(rbS2);
         rbS2.setText("Si");
@@ -1016,14 +1017,17 @@ public class Main extends javax.swing.JFrame {
 
         jButton7.setText("Eliminar Doctor");
 
+        p.setText("Pasar todo a Binario");
+        p.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(19, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1036,6 +1040,15 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(22, 22, 22))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(p)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1054,7 +1067,9 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton5)
                     .addComponent(jButton7))
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(p)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();
@@ -1286,6 +1301,11 @@ public class Main extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton10ActionPerformed
 
+    private void pActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_pActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1424,6 +1444,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JCheckBox lunes;
     private javax.swing.JCheckBox martes;
     private javax.swing.JCheckBox miercoles;
+    private javax.swing.JButton p;
     private javax.swing.JRadioButton rbF1;
     private javax.swing.JRadioButton rbF2;
     private javax.swing.JRadioButton rbF3;
@@ -1459,4 +1480,5 @@ public class Main extends javax.swing.JFrame {
 
 ArrayList<Paciente> pacientes=new ArrayList();
 ArrayList<Doctor> doctores=new ArrayList();
+Administrar ad=new Administrar("./Archivo",pacientes,doctores);
 }
