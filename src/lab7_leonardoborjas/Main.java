@@ -163,6 +163,7 @@ public class Main extends javax.swing.JFrame {
         g = new javax.swing.JComboBox<>();
         jButton11 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
+        jdModD = new javax.swing.JDialog();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -176,9 +177,11 @@ public class Main extends javax.swing.JFrame {
         rbS2.setText("Si");
 
         bg3.add(rbN3);
+        rbN3.setSelected(true);
         rbN3.setText("No");
 
         bg1.add(rbM1);
+        rbM1.setSelected(true);
         rbM1.setText("M");
 
         bg1.add(rbF1);
@@ -220,6 +223,7 @@ public class Main extends javax.swing.JFrame {
         });
 
         bg2.add(rbN4);
+        rbN4.setSelected(true);
         rbN4.setText("No");
 
         jLabel27.setText("Peso");
@@ -666,11 +670,9 @@ public class Main extends javax.swing.JFrame {
         jLabel45.setText("Marque Si o No en las siguientes si contiene una o mas:");
 
         bg3.add(rbS3);
-        rbS3.setSelected(true);
         rbS3.setText("Si");
 
         bg2.add(rbS4);
-        rbS4.setSelected(true);
         rbS4.setText("Si");
         rbS4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -685,7 +687,6 @@ public class Main extends javax.swing.JFrame {
         rbN6.setText("No");
 
         bg1.add(rbM3);
-        rbM3.setSelected(true);
         rbM3.setText("M");
 
         jLabel11.setText("Potenciado");
@@ -1025,6 +1026,17 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
+        javax.swing.GroupLayout jdModDLayout = new javax.swing.GroupLayout(jdModD.getContentPane());
+        jdModD.getContentPane().setLayout(jdModDLayout);
+        jdModDLayout.setHorizontalGroup(
+            jdModDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jdModDLayout.setVerticalGroup(
+            jdModDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel4.setText("Menu");
@@ -1291,6 +1303,13 @@ public class Main extends javax.swing.JFrame {
         if (domingo.isSelected()) {
             doctores.get(doctores.size()-1).getDias().add("Domingo");
         }
+        String seguire="s";
+        while (seguire.equalsIgnoreCase("s")) {
+            String esp=JOptionPane.showInputDialog("Que especialidades");
+            doctores.get(doctores.size()-1).getEspecialidades().add(esp);
+            seguire=JOptionPane.showInputDialog("Desea agregar otro s/n");
+        }
+        doctores.get(doctores.size()-1).setPacientes(pacientes);
         JOptionPane.showMessageDialog(this, "Doctor creado");
     }//GEN-LAST:event_jButton8ActionPerformed
 
@@ -1365,6 +1384,8 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
+        Doctor d=(Doctor)g.getSelectedItem();
+        doctores.remove(d);
         
         
     }//GEN-LAST:event_jButton11ActionPerformed
@@ -1510,6 +1531,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JDialog jdCrearPaciente;
     private javax.swing.JDialog jdElimD;
     private javax.swing.JDialog jdElimP;
+    private javax.swing.JDialog jdModD;
     private javax.swing.JDialog jdModP;
     private javax.swing.JSpinner jsAltura1;
     private javax.swing.JSpinner jsAltura2;
